@@ -1,5 +1,5 @@
 # 🏦 계좌 관리 및 이체 시스템 (Transfer System)
-> **Java Swing과 MySQL을 활용한 4인 협업 가상 뱅킹 미니 프로젝트** > **개발 기간**: 2026.05.11 ~ 2026.05.20 (약 2주)
+> **Java Swing과 MySQL을 활용한 4인 협업 가상 뱅킹 미니 프로젝트** > **개발 기간**: 2026.05.18 ~ 2026.05.20
 
 <div align="center">
   <img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white">
@@ -77,10 +77,3 @@
 | <img src="./images/07_mypage.png" width="350"> | <img src="./images/08_withdraw.png" width="350"> |
 
 ---
-
-## 5. 핵심 트러블슈팅 및 배운 점
-* **Lombok 컴파일 오류 및 JPS 증분 빌드 예외 해결**
-  - 개발 초기에 롬복 어노테이션이 작동하지 않아 `cannot find symbol (getUserId)` 에러가 발생했으나, IntelliJ 내의 **Annotation Processors 활성화** 및 Maven 의존성 재로드를 통해 해결했습니다. 
-  - 더불어 JPS 증분 처리 비활성화 경고를 해결하기 위해 빌드 프로세스 VM 옵션 플래그(`-Djps.track.ap.dependencies=true`)를 추가 설정하면서 IDE 빌드 시스템의 메커니즘을 보다深く 이해하게 되었습니다.
-* **상태 기반 데이터 관리(Soft Delete)의 신뢰성**
-  - 물리적 삭제(`DELETE`) 대신 논리적 상태 수정(`UPDATE`)을 채택하면서 발생할 수 있는 복잡한 조건(예: 탈퇴 유저의 재로그인 차단)을 SQL `WHERE` 조건절 레벨에서 깔끔하게 차단하는 구조를 설계하며, 데이터 백엔드 설계의 중요성을 체감했습니다.
